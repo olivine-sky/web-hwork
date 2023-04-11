@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>倒计时</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div id="timeout">
+		<h2 id="second">倒计时：<span id="time"></span></h2>
+	</div>
+</body>
+
+	<script type="text/javascript">
+		//一进入该页面就加载以下方法
+		window.onload = function(){
+
+			//设置倒计时时间为5秒
+			let sec = 5;
+
+			//设置定时器，每秒执行一次,重复执行
+			setInterval(function(){
+
+				//每次减一
+				sec--;
+
+				//获取内容,将倒计时显示在网页
+				document.getElementById("time").innerHTML = sec;
+				
+				//倒计时结束方法
+				if(sec<=0){
+					//关闭窗口
+					window.close();
+				}
+
+			},1000)
+		}
+		
+		
+	</script>
+
+</html>
