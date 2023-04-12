@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head long="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>cashier</title>
+</head>
+<body>
+
+</body>
+	<script type="text/javascript">
+
+
+        //定义单价price
+		let price = Number(prompt("请输入商品单价："));
+    
+        //定义数量number
+    	let number =  Number(prompt("请输入购买数量："));
+    
+        //定义产品总价total ，打折后价格discount
+    	let total = price*number;
+    	let discount = total*0.8;
+
+
+
+        //判断是否能打折：total>=500？discount:total
+    	if(total>=500){
+            alert("您此次消费超过500，可以打八折！"+"共消费："+ discount +"元");
+
+            //定义收款金额money
+        	let money =  Number(prompt("收款："));
+
+        	//判断付款金额够不够
+        	if(money>=discount){
+                //计算打折后找零：(change)=收款金额(money)-产品总价(discount)
+                let change1 = money - discount;
+                alert("共找您："+ change1 +"元");
+            }else{
+            	alert("对不起，你给的钱不够！");
+            }
+
+        }else{
+
+        	alert("您此次消费未达500,无法享受优惠折扣"+ "共消费："+ total  + "元");
+        	//定义收款金额money
+        	let money =  Number(prompt("收款："));
+
+        	//判断付款金额够不够
+        	if(money>=total){
+                //计算未打折找零：(change)=收款金额(money)-产品总价(discount)
+                let change2 = money - total;
+                  alert("共找您："+ change2 +"元");
+                }else{
+                  alert("对不起，你给的钱不够！");
+                 }       
+            
+        }
+
+	
+	</script>
+</html>
